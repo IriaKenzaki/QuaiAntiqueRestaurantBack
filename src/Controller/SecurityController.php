@@ -32,6 +32,8 @@ class SecurityController extends AbstractController
      *         description="Données de l'utilisateur à inscrire",
      *         @OA\JsonContent(
      *             type="object",
+     *             @OA\Property(property="firstname", type="string", example="Bruno"),
+     *             @OA\Property(property="lastname", type="string", example="Rivera"),
      *             @OA\Property(property="email", type="string", example="adresse@email.com"),
      *             @OA\Property(property="password", type="string", example="Mot de passe")
      *         )
