@@ -22,10 +22,10 @@ class Restaurant
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::ARRAY)]
+    #[ORM\Column(type: Types::SIMPLE_ARRAY )]
     private array $amOpeningTime = [];
 
-    #[ORM\Column(type: Types::ARRAY)]
+    #[ORM\Column(type: Types::SIMPLE_ARRAY )]
     private array $pmOpeningTime = [];
 
     #[ORM\Column]
@@ -156,7 +156,7 @@ class Restaurant
     {
         if ($this->pictures->removeElement($picture)) {
             // set the owning side to null (unless already changed)
-            if ($picture->getRestaurant() === $this) {
+            if($picture->getRestaurant() === $this) {
                 $picture->setRestaurant(null);
             }
         }
